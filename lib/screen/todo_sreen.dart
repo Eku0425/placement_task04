@@ -82,7 +82,7 @@ class TodoScreen extends StatelessWidget {
                       ? Colors.green
                       : Colors.red
                   : provider.isDarkTheme == true
-                      ? Colors.grey
+                      ? Colors.blue
                       : Colors.black,
               width: 2), // Border
         ),
@@ -141,7 +141,7 @@ class TodoScreen extends StatelessWidget {
               width: 2), // Border
         ),
         title: Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 4),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -151,14 +151,14 @@ class TodoScreen extends StatelessWidget {
                   color: provider.todos[index].completed
                       ? Colors.green
                       : Colors.red,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
               Icon(
                 provider.todos[index].completed
                     ? Icons.check_circle
                     : Icons.pending_sharp,
-                size: 30,
+                size: 25,
                 color:
                     provider.todos[index].completed ? Colors.green : Colors.red,
               ),
@@ -168,7 +168,7 @@ class TodoScreen extends StatelessWidget {
         subtitle: Text(
           provider.todos[index].title.toString(),
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.w500,
             color: Provider.of<TodoProvider>(context).isDarkTheme
                 ? Colors.white
