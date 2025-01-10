@@ -55,18 +55,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // void main() {
 //   runApp(MyApp());
-// }
-//
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Login System App',
-//       theme: ThemeData(primarySwatch: Colors.blue),
-//       home: LoginScreen(),
-//     );
-//   }
-// }
+//}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      // title: 'Login System App',
+      // theme: ThemeData(primarySwatch: Colors.blue),
+      // home: LoginScreen(),
+    );
+  }
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -76,7 +77,6 @@ Future<void> main() async {
   var con = Get.put(LoginController());
   runApp(
     GetMaterialApp(
-      debugShowCheckedModeBanner: false,
       initialRoute:
           userDetails == null || con.loginOrLogOut != true ? '/login' : '/home',
       getPages: [
